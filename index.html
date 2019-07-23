@@ -91,6 +91,26 @@ function secondlargest(arr){
 }
 console.log(secondlargest(testArr4));
 
+//#7 Double Trouble: Create a function that changes a given array to list each existing element twice, retaining original order.  
+//Convert [4, "Ulysses", 42, false] to [4,4, "Ulysses", "Ulysses", 42, 42, false, false].
+var testArr5 = [4, "Ulysses", 42, false];
+
+function doubleTrouble(arr){
+    var count = 0;
+    var originialLength = arr.length; 
+    arr.length = arr.length + arr.length;
+    for (var i = originialLength - 1; i >= 0; i--){
+        arr[arr.length-1-count] = arr[i];
+        count++;
+        arr[arr.length-1-count] = arr[i];
+        count++;
+    }
+    return arr;
+}
+
+console.log(doubleTrouble(testArr5));
+
+
 
 </script>
 
