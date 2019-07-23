@@ -55,7 +55,42 @@ console.log(secondtoLast(testArr));
 console.log(secondtoLast(testArr2));
 console.log(secondtoLast(testArr3));
 
-//#5
+//#5 Array: Nth-to-Last: Return the element that is N-from-array's-end.  Given ([5,2,3,6,4,9,7],3), return 4.  If the array is too short, return null.
+var nth = 3;
+
+function nthtoLast(arr, n){
+    if (arr.length < n){
+        return null;
+    }
+    return arr[arr.length-n];
+}
+console.log(nthtoLast(testArr, nth));
+console.log(nthtoLast(testArr2, nth));
+console.log(nthtoLast(testArr3, nth));
+
+//#6 Array: Second-Largest: Return the second-largest element of an array. Given [42,1,4,3.14,7], return 7.  If the array is too short, return null.
+var testArr4 = [49,1,48,3.14,7, 43, 1, 50, 46, 4, 47, 6, 55];
+
+function secondlargest(arr){
+    var largest = arr[0];
+    var secondLargest = [0];
+    if (arr.length < 2){
+        return null;
+    }
+    for (var i = 0; i < arr.length; i++){
+        if (arr[i] > largest){
+            secondLargest = largest;
+            largest = arr[i];
+        }
+        if (arr[i] > secondLargest && arr[i] < largest){
+            secondLargest = arr[i];
+        }
+    }
+    console.log(largest);
+    return secondLargest;
+}
+console.log(secondlargest(testArr4));
+
 
 </script>
 
